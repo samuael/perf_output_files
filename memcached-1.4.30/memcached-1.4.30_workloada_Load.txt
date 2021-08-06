@@ -1,0 +1,37 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:memcached-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[ERROR]  Attempting to generate a classpath from Maven failed with return code '1'. The output from Maven follows, try running 'mvn -DskipTests package dependency:build=classpath' on your own and correct errors.
+
+mvn output:
+[[1;34mINFO[m] Scanning for projects...
+[[1;31mERROR[m] [ERROR] Some problems were encountered while processing the POMs:
+[ERROR] Child module /proj/proxyweb-PG0/samuael/YCSB/memcached of /proj/proxyweb-PG0/samuael/YCSB/pom.xml does not exist @ 
+ @ 
+[[1;31mERROR[m] The build could not read 1 project -> [1m[Help 1][m
+[[1;31mERROR[m]   
+[[1;31mERROR[m]   The project site.ycsb:root:0.18.0-SNAPSHOT (/proj/proxyweb-PG0/samuael/YCSB/pom.xml) has 1 error
+[[1;31mERROR[m]     Child module /proj/proxyweb-PG0/samuael/YCSB/memcached of /proj/proxyweb-PG0/samuael/YCSB/pom.xml does not exist
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+
+
+ Performance counter stats for 'sudo ./bin/ycsb load memcached -s -P /proj/proxyweb-PG0/samuael/YCSB/workloads/workloada -p memcached.hosts=127.0.0.1':
+
+       17973514924      cycles                                                        (67.45%)
+        3555462589      branches                                                      (66.56%)
+         168804196      branch-misses             #    4.75% of all branches          (65.83%)
+        3540372357      branch-loads                                                  (66.04%)
+         164321125      branch-load-misses                                            (66.72%)
+         178705478      L1-icache-load-misses                                         (67.40%)
+
+       2.137641042 seconds time elapsed
+
